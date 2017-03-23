@@ -3,6 +3,7 @@ import java.awt.FlowLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.Timer;
+import javax.swing.JButton;
 
 public class Main{
 	
@@ -22,11 +23,14 @@ public class Main{
 		frame.add(another);
 		
 		MyListener listener = new MyListener(label);
+		MyListener listener2 = new MyListener(another);
 		
 		Timer timer = new Timer(1000, listener);
 		timer.start();
+		Timer timer2 = new Timer(1000, listener2);
 		
-		Button button = new Button();
+		JButton button = new JButton("Change");
+		button.addActionListener(new ButtonListener(timer, timer2));
 		frame.add(button);
 		
 

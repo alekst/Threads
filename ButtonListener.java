@@ -9,13 +9,20 @@ public class ButtonListener implements ActionListener{
 	private JLabel label;
 	private Timer timer, other;
 
-    public ButtonListener(){
-	// 	this.other = other;
+    public ButtonListener(Timer timer, Timer another){
+		super();
+		this.timer = timer;
+		this.other = another;
 
     }
 
     public void actionPerformed(ActionEvent e) {
-		System.out.println("I am here");
+		//System.out.println("I am here");
+		timer.stop();
+		other.start();
+		Timer temp = timer;
+		timer = other;
+		other = temp;
     }
 	
 }
