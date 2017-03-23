@@ -20,15 +20,15 @@ public class Main{
 		
         frame.add(label);
 		frame.add(another);
-		Thread t = new Thread(() -> {
-			for (int j = 0; j < 1000; j++)
-			{
-				label.setText("count " + j);
-			}		
-		});
-		t.start();
+		
+		MyListener listener = new MyListener(label);
+		
+		Timer timer = new Timer(1000, listener);
+		timer.start();
+		
 		Button button = new Button();
 		frame.add(button);
+		
 
         frame.setSize(225, 100);
         frame.setVisible(true);

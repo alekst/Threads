@@ -10,16 +10,12 @@ public class ButtonListener implements ActionListener{
 	private Timer timer, other;
 
     public ButtonListener(){
-		// this.label = label;
-	// 	this.timer = timer;
 	// 	this.other = other;
 
     }
 
     public void actionPerformed(ActionEvent e) {
-		// timer.stop();
-// 		other.start();
-		Main.stop();
+		System.out.println("I am here");
     }
 	
 }

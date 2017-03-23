@@ -8,7 +8,7 @@ public class Button extends JButton
 	public Button()
 	{
 		super("Change");
-		addActionListener(new ButtonListener());
+		this.addActionListener(new ButtonListener());
 		this.setEnabled(true);
 	}
 	
